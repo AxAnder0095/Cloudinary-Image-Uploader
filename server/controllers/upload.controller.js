@@ -19,5 +19,5 @@ export const uploadDB = async (req, res) => {
 }
 
 export const getMessage = (req, res) => {
-  res.json({ message: "Hello from the server!" });
+  res.json({ message: "Hello from the server! I am Alex" });
 }
