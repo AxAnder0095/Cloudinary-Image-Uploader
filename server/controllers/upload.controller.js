@@ -9,13 +9,12 @@ export const uploadDB = async (req, res) => {
 
   console.log("Data received for DB:", data);
 
-  // try{
-  //   const result = await db.collection("images").insertOne(data);
-  //   res.json({success: true, result: result , message: "Image URL saved to database" });  
-  // }catch(error){
-  //   res.json({success: false, error: "Failed to save image URL to database" });
-  // }
-  ;
+  try {
+    const result = await db.collection("images").insertOne(data);
+    res.json({ success: true, result: result, message: "Image URL saved to database" });
+  } catch (error) {
+    res.json({ success: false, error: "Failed to save image URL to database" });
+  }
 }
 
 export const getMessage = (req, res) => {
